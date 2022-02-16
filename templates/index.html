@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Tutorial for Image Scraper" />
+    <title>Unsplash Image Scraper</title>
+  </head>
+  <body>
+    <h1>Unsplash Image Scraper API</h1>
+    <p>
+      <strong>Description: </strong>This is an image scraper developed using
+      Flask. It that takes the <strong>FIRST</strong> image when given search to
+      Unsplash, and it will return its HTTP image URL.
+    </p>
+    <div style="background: #cdcdcd; margin: 0 10px; padding: 10px">
+      <h3>Search GET Method</h3>
+      <ul>
+        <li>
+          After the API's URL web address, add the following
+          <strong>/search?</strong> followed by the key value pairs below.
+        </li>
+        <li>
+          Set the key as<strong>q</strong> and the value is
+          <strong>the image you're looking for.</strong>
+        </li>
+      </ul>
+      <h4>Example Search GET Method</h4>
+      <p>
+        https://unsplash-amazable.herokuapp.com/search?q=<strong
+          style="color: red"
+          >cats</strong
+        >
+      </p>
+      <h4>Example Success JSON Response</h4>
+      <p>
+        { "imageURL":
+        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixid=MnwyOTE1MTd8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8fHx8MTY0NDYzMTUzOQ&ixlib=rb-1.2.1"
+        }
+      </p>
+    </div>
+    <div
+      style="
+        background: #cdcdcd;
+        margin: 0 10px;
+        padding: 10px;
+        margin-top: 20px;
+      "
+    >
+      <h3>Search POST Method</h3>
+      <ul>
+        <li>
+          Make a JSON POST request to this web app's search page.
+          <strong>/search?</strong>
+        </li>
+        <li>
+          Set the key as <strong>q</strong> and the value as
+          <strong>the image you're looking for.</strong>
+        </li>
+      </ul>
+      <h4>Example Search POST Method</h4>
+      <p>{ "q":"<strong style="color: red">cats</strong>"}</p>
+      <h4>Example Success JSON Response</h4>
+      <p>
+        { "imageURL":
+        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixid=MnwyOTE1MTd8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8fHx8MTY0NDYzMTUzOQ&ixlib=rb-1.2.1"
+        }
+      </p>
+    </div>
+  </body>
+</html>
