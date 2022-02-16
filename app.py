@@ -19,7 +19,7 @@ from flask_cors import CORS
 # Receive my API KEY from Heroku
 API_KEY = os.getenv("API_KEY", "optional-default")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # Include Flask CORS in application to solve Cross Origin Resource Sharing
 # Source: https://flask-cors.readthedocs.io/en/latest/
