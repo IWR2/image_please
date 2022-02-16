@@ -10,16 +10,14 @@
 # is the image you're looking for.
 
 import json
+import os
 from urllib.request import urlopen
 
 from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 
-# Receive my API key
-import config
-
-# Receive my API KEY
-API_KEY = config.send_key()
+# Receive my API KEY from Heroku
+API_KEY = os.getenv("API_KEY", "optional-default")
 
 app = Flask(__name__)
 
