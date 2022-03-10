@@ -10,9 +10,9 @@
 # is the image you're looking for.
 
 import json
+import logging
 import os
 import sys
-import logging
 from urllib.request import urlopen
 
 from flask import Flask, jsonify, request, render_template
@@ -55,25 +55,21 @@ def search():
     if request.method == 'GET' or request.method == 'POST':
         # Get the request
         args = request.args
-        # Get the query string
         q = args.get('q')
-        # Create the URL for unsplash to take the first image for the
-        # first image
         url = 'https://api.unsplash.com/search/photos/?page=1&query=' + q \
               + '&client_id=' + API_KEY + '&per_page=1'
+
         # Send the GET request
         response = urlopen(url)
+
         # Parse the json
         data_json = json.loads(response.read())
-        # Set the imageUrl to change
+
         imageUrl = ''
         # Store a raw image url to output
         for result in data_json['results']:
-            # Take the raw image URL
             imageUrl = result['urls']['raw']
-        # Send out json object as {searchTerm : imageUrl }
         return jsonify({"imageUrl": imageUrl})
-    # Incorrect usage, send back to home page.
     return render_template('index.html')
 
 
